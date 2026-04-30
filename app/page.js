@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 const MAPS_URL =
-  'https://maps.google.com/?q=Parafia+Greckokatolicka+Narodzenia+NMP+Ząbki+Polska'
+  'https://maps.google.com/?q=Parafia+Greckokatolicka+Narodzenia+NMP+Zabki+Polska'
 
 const CONTENT = {
   pl: {
@@ -28,12 +28,12 @@ const CONTENT = {
     contact: {
       heading: 'Kontakt',
       rows: [
-        { label: 'Osoba', value: 'Valeriia Brodzki', href: null },
-        { label: 'E-mail', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
-        { label: 'Adres', value: 'Ząbki, woj. mazowieckie', href: MAPS_URL },
+        { label: 'Osoba:', value: 'Valeriia Brodzki', href: null },
+        { label: 'E-mail:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
+        { label: 'Adres:', value: 'Ząbki, woj. mazowieckie', href: MAPS_URL },
       ],
     },
-    footer: '© 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
+    footer: 'Copyright © 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
   },
   en: {
     eyebrow: 'Greek Catholic Parish',
@@ -55,12 +55,12 @@ const CONTENT = {
     contact: {
       heading: 'Contact',
       rows: [
-        { label: 'Person', value: 'Valeriia Brodzki', href: null },
-        { label: 'Email', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
-        { label: 'Address', value: 'Ząbki, Masovian Voivodeship', href: MAPS_URL },
+        { label: 'Person:', value: 'Valeriia Brodzki', href: null },
+        { label: 'Email:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
+        { label: 'Address:', value: 'Ząbki, Masovian Voivodeship', href: MAPS_URL },
       ],
     },
-    footer: '© 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
+    footer: 'Copyright © 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Zą́bki',
   },
 }
 
@@ -80,98 +80,74 @@ export default function Home() {
   return (
     <div className={styles.page}>
 
-      {/* Header */}
-      <header className={styles.header}>
-        <div className={styles.langRow}>
-          <button
-            className={styles.langBtn}
-            onClick={() => setLang(l => (l === 'pl' ? 'en' : 'pl'))}
-            aria-label="Switch language"
-          >
-            <span className={lang === 'pl' ? styles.langActive : ''}>PL</span>
-            <span className={styles.langSep}>·</span>
-            <span className={lang === 'en' ? styles.langActive : ''}>EN</span>
-          </button>
-        </div>
+      <div className={styles.langRow}>
+        <button className={styles.langBtn} onClick={() => setLang(l => l === 'pl' ? 'en' : 'pl')}>
+          <span className={lang === 'pl' ? styles.langActive : ''}>PL</span>
+          <span className={styles.langSep}>|</span>
+          <span className={lang === 'en' ? styles.langActive : ''}>EN</span>
+        </button>
+      </div>
 
-        <Image
-          src="/favicon.webp"
-          alt="Herb parafii"
-          width={110}
-          height={126}
-          className={styles.crest}
-        />
+      <div className={styles.header}>
+        <Image src="/favicon.webp" alt="Herb parafii" width={90} height={103} className={styles.crest} />
         <p className={styles.eyebrow}>{c.eyebrow}</p>
         <h1 className={styles.title}>{c.title}</h1>
         <p className={styles.location}>{c.location}</p>
-      </header>
+      </div>
 
-      {/* Church photo */}
+      <hr />
+
       <Image
         src="/church.jpg"
-        alt="Parafia Greckokatolicka w Ząbkach"
-        width={680}
-        height={340}
+        alt="Parafia Greckokatolicka w Zabkach"
+        width={750}
+        height={220}
         className={styles.photo}
-        style={{ objectFit: 'cover', objectPosition: 'center 40%', height: '280px' }}
         priority
       />
 
-      {/* About */}
-      <section className={styles.section}>
-        <p className={styles.sectionTitle}>{c.about.heading}</p>
-        <p className={styles.bodyText}>{c.about.text}</p>
-      </section>
+      <hr />
 
-      {/* Services */}
-      <section className={styles.section}>
-        <p className={styles.sectionTitle}>{c.services.heading}</p>
-        <table className={styles.schedule}>
-          <tbody>
-            {c.services.schedule.map((item, i) => (
-              <tr key={i}>
-                <td>{item.day}</td>
-                <td>{item.time}</td>
-                <td>{item.name}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p className={styles.scheduleNote}>{c.services.note}</p>
-      </section>
+      <h2 className={styles.sectionTitle}>{c.about.heading}</h2>
+      <p className={styles.bodyText}>{c.about.text}</p>
 
-      {/* Contact */}
-      <section className={styles.section}>
-        <p className={styles.sectionTitle}>{c.contact.heading}</p>
-        <table className={styles.contactTable}>
-          <tbody>
-            {c.contact.rows.map((row, i) => (
-              <tr key={i}>
-                <td>{row.label}</td>
-                <td>
-                  {row.href ? (
-                    <a
-                      href={row.href}
-                      target={row.href.startsWith('mailto') ? undefined : '_blank'}
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      {row.value}
-                    </a>
-                  ) : (
-                    row.value
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+      <hr />
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <p>{c.footer}</p>
-      </footer>
+      <h2 className={styles.sectionTitle}>{c.services.heading}</h2>
+      <table className={styles.schedule}>
+        <tbody>
+          {c.services.schedule.map((item, i) => (
+            <tr key={i}>
+              <td>{item.day}</td>
+              <td>{item.time}</td>
+              <td>{item.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className={styles.scheduleNote}>{c.services.note}</p>
+
+      <hr />
+
+      <h2 className={styles.sectionTitle}>{c.contact.heading}</h2>
+      <table className={styles.contactTable}>
+        <tbody>
+          {c.contact.rows.map((row, i) => (
+            <tr key={i}>
+              <td>{row.label}</td>
+              <td>
+                {row.href
+                  ? <a href={row.href} target={row.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">{row.value}</a>
+                  : row.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <hr />
+
+      <p className={styles.footer}>{c.footer}</p>
 
     </div>
   )

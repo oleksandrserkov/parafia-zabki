@@ -1,215 +1,136 @@
-/* ── Outer wrapper ── */
 .page {
-  max-width: 680px;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-
-/* ── Header ── */
-.header {
-  text-align: center;
-  padding: 3rem 0 1.5rem;
-  border-bottom: 2px solid var(--rule);
+  padding: 15px 20px 40px;
 }
 
 .langRow {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
+  text-align: right;
+  font-size: 13px;
+  margin-bottom: 10px;
 }
 
 .langBtn {
-  font-family: var(--font);
-  font-size: 0.9rem;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
   background: none;
-  border: 1px solid var(--rule);
-  color: var(--text-light);
-  padding: 0.2rem 0.6rem;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  color: #0000cc;
+  text-decoration: underline;
 }
 
 .langBtn:hover {
-  color: var(--text);
+  color: #cc0000;
 }
 
 .langActive {
-  color: var(--text);
-  font-style: italic;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
 }
 
 .langSep {
-  opacity: 0.5;
+  color: #000000;
+  margin: 0 3px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .crest {
-  width: 110px;
+  width: 90px;
   height: auto;
-  margin: 0 auto 1.25rem;
   display: block;
-  opacity: 0.92;
+  margin: 0 auto 8px;
 }
 
 .eyebrow {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 0.6rem;
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 4px;
 }
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.25;
-  color: var(--text);
-  margin-bottom: 1rem;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 4px;
 }
 
 .location {
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  color: var(--text-light);
+  font-size: 14px;
+  color: #555555;
 }
 
-/* ── Church photo ── */
 .photo {
   width: 100%;
-  margin: 2rem 0 0;
-  border: 1px solid var(--rule);
+  height: 220px;
+  object-fit: cover;
+  object-position: center 40%;
   display: block;
-}
-
-/* ── Sections ── */
-.section {
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--rule);
+  margin: 12px 0;
 }
 
 .sectionTitle {
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 1.25rem;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 8px;
 }
 
 .bodyText {
-  font-size: 1.05rem;
-  color: var(--text-mid);
-  line-height: 1.85;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* ── Schedule ── */
 .schedule {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 0.25rem;
-}
-
-.schedule tr {
-  border-bottom: 1px solid #cdc3b0;
-}
-
-.schedule tr:first-child {
-  border-top: 1px solid #cdc3b0;
+  font-size: 15px;
+  margin-bottom: 8px;
 }
 
 .schedule td {
-  padding: 0.75rem 0.5rem;
-  font-size: 1.05rem;
-  vertical-align: baseline;
+  padding: 4px 10px 4px 0;
+  vertical-align: top;
 }
 
 .schedule td:first-child {
-  padding-left: 0;
-  color: var(--text);
-  width: 42%;
+  width: 140px;
+  font-weight: bold;
 }
 
 .schedule td:nth-child(2) {
-  color: var(--text-mid);
-  font-style: italic;
-  width: 22%;
-}
-
-.schedule td:last-child {
-  color: var(--text-light);
-  padding-right: 0;
+  width: 70px;
 }
 
 .scheduleNote {
-  font-size: 0.88rem;
-  color: var(--text-light);
+  font-size: 13px;
+  color: #555555;
   font-style: italic;
-  margin-top: 1rem;
 }
 
-/* ── Contact ── */
 .contactTable {
-  width: 100%;
+  font-size: 15px;
   border-collapse: collapse;
 }
 
-.contactTable tr {
-  border-bottom: 1px solid #cdc3b0;
-}
-
-.contactTable tr:first-child {
-  border-top: 1px solid #cdc3b0;
-}
-
 .contactTable td {
-  padding: 0.75rem 0.5rem;
-  font-size: 1.05rem;
-  vertical-align: baseline;
+  padding: 3px 14px 3px 0;
+  vertical-align: top;
 }
 
 .contactTable td:first-child {
-  padding-left: 0;
-  color: var(--text-light);
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: bold;
   width: 110px;
 }
 
-.contactTable td:last-child {
-  padding-right: 0;
-  color: var(--text-mid);
-}
-
-.link {
-  color: var(--text-mid);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: #cdc3b0;
-}
-
-.link:hover {
-  text-decoration-color: var(--text-mid);
-}
-
-/* ── Footer ── */
 .footer {
-  padding: 2rem 0 0;
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-light);
-  font-style: italic;
-}
-
-/* ── Responsive ── */
-@media (max-width: 560px) {
-  .schedule td:last-child {
-    display: none;
-  }
-
-  .schedule td:first-child {
-    width: 50%;
-  }
+  font-size: 12px;
+  color: #555555;
+  margin-top: 10px;
 }
