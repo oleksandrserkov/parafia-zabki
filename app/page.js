@@ -5,7 +5,6 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Carousel from './Carousel'
 
-const FB_URL = 'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
 const MAPS_URL = 'https://maps.google.com/?q=ul.+Powsta%C5%84c%C3%B3w+30+Z%C4%85bki+Polska'
 
 const CONTENT = {
@@ -50,7 +49,6 @@ const CONTENT = {
         { label: 'Tel:', value: '+48 570 443 757', href: 'tel:+48570443757' },
         { label: 'E-mail:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Adres:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
-        { label: 'Facebook:', value: 'Profil parafii', href: FB_URL },
       ],
     },
     footer: 'Copyright © 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
@@ -96,7 +94,6 @@ const CONTENT = {
         { label: 'Phone:', value: '+48 570 443 757', href: 'tel:+48570443757' },
         { label: 'Email:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Address:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
-        { label: 'Facebook:', value: 'Parish profile', href: FB_URL },
       ],
     },
     footer: 'Copyright © 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
