@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
 
-const MAPS_URL =
-  'https://maps.google.com/?q=Parafia+Greckokatolicka+Narodzenia+NMP+Zabki+Polska'
+const FB_URL = 'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
+const MAPS_URL = 'https://maps.google.com/?q=ul.+Powsta%C5%84c%C3%B3w+30+Z%C4%85bki+Polska'
 
 const CONTENT = {
   pl: {
@@ -16,6 +16,11 @@ const CONTENT = {
       heading: 'O Parafii',
       text: 'Jesteśmy parafią greckokatolicką pw. Narodzenia Najświętszej Maryi Panny w Ząbkach koło Warszawy. Kościół greckokatolicki łączy wschodnią tradycję liturgiczną z jednością ze Stolicą Apostolską w Rzymie. Zapraszamy wszystkich.',
     },
+    history: {
+      heading: 'Historia',
+      text: 'Od 1 kwietnia 2018 r., przy Parafii Rzymskokatolickiej Zesłania Ducha Świętego w Ząbkach (ul. Powstańców 30, 05-091), rozpoczęły się stałe nabożeństwa Kościoła Greckokatolickiego w Polsce w języku ukraińskim, w celu duchowego wsparcia chrześcijan obrządku wschodniego zamieszkałych i pracujących w tych okolicach.',
+      ukrainian: 'Від 1 квітня 2018 р.Б., при Римо-Католицькій парафії Зіслання Святого Духа, що знаходиться у Зомбках (Ząbkach) вул. Powstańców 30, 05-091, розпочинаються постійні Богослужіння Греко-Католицької Церкви у Польщі українською мовою з метою духовної підтримки потребуючих християн Східного обряду, що проживають та працюють в цих околицях.',
+    },
     services: {
       heading: 'Nabożeństwa',
       schedule: [
@@ -25,13 +30,19 @@ const CONTENT = {
       ],
       note: 'W sprawie aktualnego harmonogramu prosimy o kontakt.',
     },
+    events: {
+      heading: 'Ogłoszenia i wydarzenia',
+      text: 'Aktualne ogłoszenia i wydarzenia parafialne znajdziesz na naszej stronie na Facebooku.',
+      linkLabel: 'Zobacz na Facebooku →',
+    },
     contact: {
       heading: 'Kontakt',
       rows: [
         { label: 'Osoba:', value: 'Valeriia Brodzki', href: null },
         { label: 'Tel:', value: '+48 570 443 757', href: 'tel:+48570443757' },
         { label: 'E-mail:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
-        { label: 'Adres:', value: 'Ząbki, woj. mazowieckie', href: MAPS_URL },
+        { label: 'Adres:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
+        { label: 'Facebook:', value: 'Profil parafii', href: FB_URL },
       ],
     },
     footer: 'Copyright © 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
@@ -44,6 +55,11 @@ const CONTENT = {
       heading: 'About',
       text: 'We are the Greek Catholic Parish of the Nativity of the Most Holy Virgin Mary in Ząbki, near Warsaw. The Greek Catholic Church unites Eastern liturgical tradition with full communion with the Holy See in Rome. All are welcome.',
     },
+    history: {
+      heading: 'History',
+      text: 'From April 1, 2018, at the Roman Catholic Parish of the Descent of the Holy Spirit in Ząbki (ul. Powstańców 30, 05-091), regular services of the Greek Catholic Church in Poland began in the Ukrainian language, providing spiritual support for Eastern Rite Christians living and working in the area.',
+      ukrainian: 'Від 1 квітня 2018 р.Б., при Римо-Католицькій парафії Зіслання Святого Духа, що знаходиться у Зомбках (Ząbkach) вул. Powstańców 30, 05-091, розпочинаються постійні Богослужіння Греко-Католицької Церкви у Польщі українською мовою з метою духовної підтримки потребуючих християн Східного обряду, що проживають та працюють в цих околицях.',
+    },
     services: {
       heading: 'Services',
       schedule: [
@@ -53,16 +69,22 @@ const CONTENT = {
       ],
       note: 'Please contact us for the current schedule.',
     },
+    events: {
+      heading: 'Announcements & Events',
+      text: 'Current parish announcements and upcoming events are posted on our Facebook page.',
+      linkLabel: 'View on Facebook →',
+    },
     contact: {
       heading: 'Contact',
       rows: [
         { label: 'Person:', value: 'Valeriia Brodzki', href: null },
         { label: 'Phone:', value: '+48 570 443 757', href: 'tel:+48570443757' },
         { label: 'Email:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
-        { label: 'Address:', value: 'Ząbki, Masovian Voivodeship', href: MAPS_URL },
+        { label: 'Address:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
+        { label: 'Facebook:', value: 'Parish profile', href: FB_URL },
       ],
     },
-    footer: 'Copyright © 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Zą́bki',
+    footer: 'Copyright © 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
   },
 }
 
@@ -115,6 +137,13 @@ export default function Home() {
 
       <hr />
 
+      <h2 className={styles.sectionTitle}>{c.history.heading}</h2>
+      <p className={styles.bodyText}>{c.history.text}</p>
+      <br />
+      <p className={styles.ukrainian}>{c.history.ukrainian}</p>
+
+      <hr />
+
       <h2 className={styles.sectionTitle}>{c.services.heading}</h2>
       <table className={styles.schedule}>
         <tbody>
@@ -131,6 +160,14 @@ export default function Home() {
 
       <hr />
 
+      <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
+      <p className={styles.bodyText}>{c.events.text}</p>
+      <p style={{ marginTop: '8px' }}>
+        <a href={FB_URL} target="_blank" rel="noopener noreferrer">{c.events.linkLabel}</a>
+      </p>
+
+      <hr />
+
       <h2 className={styles.sectionTitle}>{c.contact.heading}</h2>
       <table className={styles.contactTable}>
         <tbody>
@@ -139,7 +176,7 @@ export default function Home() {
               <td>{row.label}</td>
               <td>
                 {row.href
-                  ? <a href={row.href} target={row.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">{row.value}</a>
+                  ? <a href={row.href} target={row.href.startsWith('mailto') || row.href.startsWith('tel') ? undefined : '_blank'} rel="noopener noreferrer">{row.value}</a>
                   : row.value}
               </td>
             </tr>

@@ -107,6 +107,15 @@
   width: 70px;
 }
 
+.ukrainian {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  font-style: italic;
+  border-left: 3px solid #cccccc;
+  padding-left: 12px;
+}
+
 .scheduleNote {
   font-size: 13px;
   color: #555555;
