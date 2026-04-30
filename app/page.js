@@ -133,70 +133,71 @@ export default function Home() {
 <p className={styles.location}>{c.location}</p>
       </div>
 
-      <hr />
-
       <Image
         src="/church.jpg"
         alt="Parafia Greckokatolicka w Zabkach"
         width={750}
-        height={220}
+        height={200}
         className={styles.photo}
         priority
       />
 
-      <hr />
+      <div className={styles.body}>
 
-      <h2 className={styles.sectionTitle}>{c.about.heading}</h2>
-      <p className={styles.bodyText}>{c.about.text}</p>
+        <h2 className={styles.sectionTitle}>{c.about.heading}</h2>
+        <p className={styles.bodyText}>{c.about.text}</p>
 
-      <hr />
+        <hr />
 
-      <h2 className={styles.sectionTitle}>{c.history.heading}</h2>
-      <p className={styles.bodyText}>{c.history.text}</p>
+        <h2 className={styles.sectionTitle}>{c.history.heading}</h2>
+        <p className={styles.bodyText}>{c.history.text}</p>
 
-      <hr />
+        <hr />
 
-      <h2 className={styles.sectionTitle}>{c.services.heading}</h2>
-      <table className={styles.schedule}>
-        <tbody>
-          {c.services.schedule.map((item, i) => (
-            <tr key={i}>
-              <td>{item.day}</td>
-              <td>{item.time}</td>
-              <td>{item.name}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p className={styles.scheduleNote}>{c.services.note}</p>
+        <h2 className={styles.sectionTitle}>{c.services.heading}</h2>
+        <table className={styles.schedule}>
+          <tbody>
+            {c.services.schedule.map((item, i) => (
+              <tr key={i}>
+                <td>{item.day}</td>
+                <td>{item.time}</td>
+                <td>{item.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className={styles.scheduleNote}>{c.services.note}</p>
 
-      <hr />
+        <hr />
 
-      <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
-      <Carousel />
+        <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
+        <Carousel />
 
+        <hr />
 
-      <hr />
+        <h2 className={styles.sectionTitle}>{c.contact.heading}</h2>
+        <table className={styles.contactTable}>
+          <tbody>
+            {c.contact.rows.map((row, i) => (
+              <tr key={i}>
+                <td>{row.label}</td>
+                <td>
+                  {row.href
+                    ? <a href={row.href} target={row.href.startsWith('mailto') || row.href.startsWith('tel') ? undefined : '_blank'} rel="noopener noreferrer">{row.value}</a>
+                    : row.value}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      <h2 className={styles.sectionTitle}>{c.contact.heading}</h2>
-      <table className={styles.contactTable}>
-        <tbody>
-          {c.contact.rows.map((row, i) => (
-            <tr key={i}>
-              <td>{row.label}</td>
-              <td>
-                {row.href
-                  ? <a href={row.href} target={row.href.startsWith('mailto') || row.href.startsWith('tel') ? undefined : '_blank'} rel="noopener noreferrer">{row.value}</a>
-                  : row.value}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      </div>
 
-      <hr />
-
-      <p className={styles.footer}>{c.footer}</p>
+      <div className={styles.footer}>
+        <p>{c.footer}</p>
+        <p className={styles.counter}>Liczba odwiedzin: 004872</p>
+        <p className={styles.ie}>Strona najlepiej wyświetla się w przeglądarce Internet Explorer 6.0 przy rozdzielczości 800x600</p>
+      </div>
 
     </div>
   )
