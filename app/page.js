@@ -130,8 +130,7 @@ export default function Home() {
         <Image src="/favicon.webp" alt="Herb parafii" width={90} height={103} className={styles.crest} />
         <p className={styles.eyebrow}>{c.eyebrow}</p>
         <h1 className={styles.title}>{c.title}</h1>
-        <p className={styles.roots}>{c.roots}</p>
-        <p className={styles.location}>{c.location}</p>
+<p className={styles.location}>{c.location}</p>
       </div>
 
       <hr />
