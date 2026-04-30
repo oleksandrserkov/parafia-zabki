@@ -52,7 +52,7 @@ const CONTENT = {
         { label: 'Adres:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
       ],
     },
-    footer: 'Copyright © 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
+    footer: 'Copyright © 2018 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
   },
   en: {
     eyebrow: 'Greek Catholic Parish',
@@ -98,7 +98,7 @@ const CONTENT = {
         { label: 'Address:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
       ],
     },
-    footer: 'Copyright © 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
+    footer: 'Copyright © 2018 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
   },
 }
 
