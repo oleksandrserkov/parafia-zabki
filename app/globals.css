@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #060a18;
+  --bg-card: #0b1020;
+  --bg-alt: #080d1f;
+  --gold: #c8a84c;
+  --gold-bright: #e0c468;
+  --gold-dim: rgba(200, 168, 76, 0.18);
+  --text: #f0e6d0;
+  --text-dim: rgba(240, 230, 208, 0.62);
+  --text-muted: rgba(240, 230, 208, 0.35);
+  --border: rgba(200, 168, 76, 0.16);
+  --font-heading: var(--font-cinzel), 'Cinzel', serif;
+  --font-body: var(--font-garamond), 'EB Garamond', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(200, 168, 76, 0.28);
+}
