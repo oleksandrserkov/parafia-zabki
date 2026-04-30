@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
 
-const FB_URL =
-  'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
 const MAPS_URL =
   'https://maps.google.com/?q=Parafia+Greckokatolicka+Narodzenia+NMP+Ząbki+Polska'
 
@@ -28,7 +26,7 @@ const CONTENT = {
         { day: 'Środa', time: '18:30', name: 'Nieszpory' },
         { day: 'Piątek', time: '18:30', name: 'Akatyst' },
       ],
-      note: 'Aktualny harmonogram — Facebook',
+      note: 'W sprawie aktualnego harmonogramu prosimy o kontakt.',
     },
     contact: {
       heading: 'Kontakt',
@@ -36,10 +34,9 @@ const CONTENT = {
         { label: 'Osoba', value: 'Valeriia Brodzki', href: null },
         { label: 'E-mail', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Adres', value: 'Ząbki, woj. mazowieckie', href: MAPS_URL },
-        { label: 'Facebook', value: 'Profil parafii', href: FB_URL },
       ],
     },
-    footer: '© 2025 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
+    footer: '© 2026 Parafia Greckokatolicka pw. Narodzenia NMP w Ząbkach',
   },
   en: {
     nav: { brand: 'Parish · Ząbki', links: ['About', 'Services', 'Contact'] },
@@ -59,7 +56,7 @@ const CONTENT = {
         { day: 'Wednesday', time: '18:30', name: 'Vespers' },
         { day: 'Friday', time: '18:30', name: 'Akathist' },
       ],
-      note: 'Current schedule — Facebook',
+      note: 'Please contact us for the current schedule.',
     },
     contact: {
       heading: 'Contact',
@@ -67,10 +64,9 @@ const CONTENT = {
         { label: 'Person', value: 'Valeriia Brodzki', href: null },
         { label: 'Email', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Address', value: 'Ząbki, Masovian Voivodeship', href: MAPS_URL },
-        { label: 'Facebook', value: 'Parish profile', href: FB_URL },
       ],
     },
-    footer: '© 2025 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
+    footer: '© 2026 Greek Catholic Parish of the Nativity of the Holy Virgin Mary in Ząbki',
   },
 }
 
@@ -149,12 +145,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className={styles.scheduleNote}>
-            {c.services.note} →{' '}
-            <a href={FB_URL} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-              Facebook
-            </a>
-          </p>
+          <p className={styles.scheduleNote}>{c.services.note}</p>
         </div>
       </section>
 
