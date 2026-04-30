@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
-import FacebookFeed from './FacebookFeed'
 import Carousel from './Carousel'
 
 const FB_URL = 'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
@@ -177,9 +176,6 @@ export default function Home() {
       <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
       <Carousel />
 
-      <hr />
-
-      <FacebookFeed />
 
       <hr />
 
