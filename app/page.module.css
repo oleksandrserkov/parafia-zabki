@@ -116,6 +116,49 @@
   padding-left: 12px;
 }
 
+.eventPost {
+  margin-bottom: 10px;
+}
+
+.eventTitle {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.eventTopicsLabel {
+  font-size: 15px;
+  margin: 8px 0 4px;
+}
+
+.eventTopics {
+  font-size: 15px;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.eventImg {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #cccccc;
+}
+
+@media (max-width: 560px) {
+  .eventGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .scheduleNote {
   font-size: 13px;
   color: #555555;

@@ -32,8 +32,16 @@ const CONTENT = {
     },
     events: {
       heading: 'Ogłoszenia i wydarzenia',
-      text: 'Aktualne ogłoszenia i wydarzenia parafialne znajdziesz na naszej stronie na Facebooku.',
-      linkLabel: 'Zobacz na Facebooku →',
+    },
+    eventPost: {
+      heading: 'Spotkanie dekanatów warszawskiego i łódzkiego',
+      body: 'Spotkanie dekanatów warszawskiego i łódzkiego z Metropolitą Eugeniuszem Popowyczem oraz ojcami-prelegentami.',
+      topics: [
+        '„Proboszcz. Rada Parafialna. Podstawy teologiczne. Porządek kanoniczny. Praktyka duszpasterska."',
+        '„Duszpasterstwo rodzin w warunkach wojny."',
+      ],
+      topicsLabel: 'Tematy spotkania formacyjnego:',
+      thanks: 'Dziękujemy wszystkim za aktywny udział.',
     },
     contact: {
       heading: 'Kontakt',
@@ -70,8 +78,16 @@ const CONTENT = {
     },
     events: {
       heading: 'Announcements & Events',
-      text: 'Current parish announcements and upcoming events are posted on our Facebook page.',
-      linkLabel: 'View on Facebook →',
+    },
+    eventPost: {
+      heading: 'Meeting of the Warsaw and Łódź Deaneries',
+      body: 'Meeting of the Warsaw and Łódź Deaneries with Metropolitan Yevhen Popovych and the priest-lecturers.',
+      topics: [
+        '"The Parish Priest. Parish Council. Theological Foundations. Canon Law. Pastoral Practice."',
+        '"Pastoral Care of Families in Wartime."',
+      ],
+      topicsLabel: 'Topics discussed at the formation meeting:',
+      thanks: 'Thank you all for your active participation.',
     },
     contact: {
       heading: 'Contact',
@@ -158,6 +174,31 @@ export default function Home() {
       <hr />
 
       <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
+
+      <div className={styles.eventPost}>
+        <h3 className={styles.eventTitle}>{c.eventPost.heading}</h3>
+        <p className={styles.bodyText}>{c.eventPost.body}</p>
+        <p className={styles.eventTopicsLabel}>{c.eventPost.topicsLabel}</p>
+        <ol className={styles.eventTopics}>
+          {c.eventPost.topics.map((t, i) => <li key={i}>{t}</li>)}
+        </ol>
+        <p className={styles.bodyText}><em>{c.eventPost.thanks}</em></p>
+        <div className={styles.eventGrid}>
+          {['event2.jpg','event4.jpg','event1.jpg','event3.jpg'].map((img, i) => (
+            <Image
+              key={i}
+              src={`/${img}`}
+              alt={`${c.eventPost.heading} - zdjęcie ${i + 1}`}
+              width={350}
+              height={260}
+              className={styles.eventImg}
+            />
+          ))}
+        </div>
+      </div>
+
+      <hr />
+
       <FacebookFeed />
 
       <hr />
