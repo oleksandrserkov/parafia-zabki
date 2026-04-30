@@ -1,10 +1,12 @@
-import { Lora } from 'next/font/google'
+import { Spectral } from 'next/font/google'
 import './globals.css'
 
-const lora = Lora({
+const spectral = Spectral({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-lora',
+  variable: '--font-fell',
   display: 'swap',
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata = {
@@ -15,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={lora.variable}>{children}</body>
+      <body className={spectral.variable}>{children}</body>
     </html>
   )
 }
