@@ -1,15 +1,9 @@
-import { Cinzel, EB_Garamond } from 'next/font/google'
+import { Lora } from 'next/font/google'
 import './globals.css'
 
-const cinzel = Cinzel({
-  subsets: ['latin'],
-  variable: '--font-cinzel',
-  display: 'swap',
-})
-
-const garamond = EB_Garamond({
+const lora = Lora({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-garamond',
+  variable: '--font-lora',
   display: 'swap',
 })
 
@@ -21,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={`${cinzel.variable} ${garamond.variable}`}>{children}</body>
+      <body className={lora.variable}>{children}</body>
     </html>
   )
 }

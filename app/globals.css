@@ -5,18 +5,14 @@
 }
 
 :root {
-  --bg: #060a18;
-  --bg-card: #0b1020;
-  --bg-alt: #080d1f;
-  --gold: #c8a84c;
-  --gold-bright: #e0c468;
-  --gold-dim: rgba(200, 168, 76, 0.18);
-  --text: #f0e6d0;
-  --text-dim: rgba(240, 230, 208, 0.62);
-  --text-muted: rgba(240, 230, 208, 0.35);
-  --border: rgba(200, 168, 76, 0.16);
-  --font-heading: var(--font-cinzel), 'Cinzel', serif;
-  --font-body: var(--font-garamond), 'EB Garamond', serif;
+  --bg: #f7f4ef;
+  --bg-alt: #eeebe4;
+  --text: #1a1714;
+  --text-mid: #4e463c;
+  --text-light: #857d72;
+  --accent: #7a5c18;
+  --border: #ddd8cf;
+  --font: var(--font-lora), 'Lora', Georgia, serif;
 }
 
 html {
@@ -26,8 +22,8 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-body);
-  font-size: 18px;
+  font-family: var(--font);
+  font-size: 19px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
@@ -38,5 +34,5 @@ a {
 }
 
 ::selection {
-  background: rgba(200, 168, 76, 0.28);
+  background: rgba(122, 92, 24, 0.18);
 }
