@@ -77,6 +77,11 @@ export default function Home() {
   const c = CONTENT[lang]
 
   useEffect(() => {
+    const browserLang = navigator.language || ''
+    if (!browserLang.startsWith('pl')) setLang('en')
+  }, [])
+
+  useEffect(() => {
     document.documentElement.lang = lang
   }, [lang])
 
