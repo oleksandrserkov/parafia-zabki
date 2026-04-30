@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
 import FacebookFeed from './FacebookFeed'
+import Carousel from './Carousel'
 
 const FB_URL = 'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
 const MAPS_URL = 'https://maps.google.com/?q=ul.+Powsta%C5%84c%C3%B3w+30+Z%C4%85bki+Polska'
@@ -174,28 +175,7 @@ export default function Home() {
       <hr />
 
       <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
-
-      <div className={styles.eventPost}>
-        <h3 className={styles.eventTitle}>{c.eventPost.heading}</h3>
-        <p className={styles.bodyText}>{c.eventPost.body}</p>
-        <p className={styles.eventTopicsLabel}>{c.eventPost.topicsLabel}</p>
-        <ol className={styles.eventTopics}>
-          {c.eventPost.topics.map((t, i) => <li key={i}>{t}</li>)}
-        </ol>
-        <p className={styles.bodyText}><em>{c.eventPost.thanks}</em></p>
-        <div className={styles.eventGrid}>
-          {['event2.jpg','event4.jpg','event1.jpg','event3.jpg'].map((img, i) => (
-            <Image
-              key={i}
-              src={`/${img}`}
-              alt={`${c.eventPost.heading} - zdjęcie ${i + 1}`}
-              width={350}
-              height={260}
-              className={styles.eventImg}
-            />
-          ))}
-        </div>
-      </div>
+      <Carousel />
 
       <hr />
 

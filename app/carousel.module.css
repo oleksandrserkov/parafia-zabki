@@ -1,0 +1,40 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.imgWrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  height: 400px;
+  border: 1px solid #cccccc;
+}
+
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
+  background: none;
+  border: 1px solid #cccccc;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #0000cc;
+  line-height: 1;
+  align-self: center;
+  height: 40px;
+}
+
+.btn:hover {
+  color: #cc0000;
+}
+
+.counter {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #555555;
+  margin-top: 4px;
+}
