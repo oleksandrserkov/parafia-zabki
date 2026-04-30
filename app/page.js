@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
+import FacebookFeed from './FacebookFeed'
 
 const FB_URL = 'https://www.facebook.com/people/Parafia-greckokatolicka-pw-narodzenia-NMP-w-Z%C4%85bkach/61556733593364/'
 const MAPS_URL = 'https://maps.google.com/?q=ul.+Powsta%C5%84c%C3%B3w+30+Z%C4%85bki+Polska'
@@ -19,7 +20,6 @@ const CONTENT = {
     history: {
       heading: 'Historia',
       text: 'Od 1 kwietnia 2018 r., przy Parafii Rzymskokatolickiej Zesłania Ducha Świętego w Ząbkach (ul. Powstańców 30, 05-091), rozpoczęły się stałe nabożeństwa Kościoła Greckokatolickiego w Polsce w języku ukraińskim, w celu duchowego wsparcia chrześcijan obrządku wschodniego zamieszkałych i pracujących w tych okolicach.',
-      ukrainian: 'Від 1 квітня 2018 р.Б., при Римо-Католицькій парафії Зіслання Святого Духа, що знаходиться у Зомбках (Ząbkach) вул. Powstańców 30, 05-091, розпочинаються постійні Богослужіння Греко-Католицької Церкви у Польщі українською мовою з метою духовної підтримки потребуючих християн Східного обряду, що проживають та працюють в цих околицях.',
     },
     services: {
       heading: 'Nabożeństwa',
@@ -58,7 +58,6 @@ const CONTENT = {
     history: {
       heading: 'History',
       text: 'From April 1, 2018, at the Roman Catholic Parish of the Descent of the Holy Spirit in Ząbki (ul. Powstańców 30, 05-091), regular services of the Greek Catholic Church in Poland began in the Ukrainian language, providing spiritual support for Eastern Rite Christians living and working in the area.',
-      ukrainian: 'Від 1 квітня 2018 р.Б., при Римо-Католицькій парафії Зіслання Святого Духа, що знаходиться у Зомбках (Ząbkach) вул. Powstańców 30, 05-091, розпочинаються постійні Богослужіння Греко-Католицької Церкви у Польщі українською мовою з метою духовної підтримки потребуючих християн Східного обряду, що проживають та працюють в цих околицях.',
     },
     services: {
       heading: 'Services',
@@ -139,8 +138,6 @@ export default function Home() {
 
       <h2 className={styles.sectionTitle}>{c.history.heading}</h2>
       <p className={styles.bodyText}>{c.history.text}</p>
-      <br />
-      <p className={styles.ukrainian}>{c.history.ukrainian}</p>
 
       <hr />
 
@@ -161,10 +158,7 @@ export default function Home() {
       <hr />
 
       <h2 className={styles.sectionTitle}>{c.events.heading}</h2>
-      <p className={styles.bodyText}>{c.events.text}</p>
-      <p style={{ marginTop: '8px' }}>
-        <a href={FB_URL} target="_blank" rel="noopener noreferrer">{c.events.linkLabel}</a>
-      </p>
+      <FacebookFeed />
 
       <hr />
 
