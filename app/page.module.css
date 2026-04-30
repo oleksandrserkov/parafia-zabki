@@ -60,6 +60,13 @@
   margin: 0 0 4px;
 }
 
+.roots {
+  font-size: 14px;
+  color: #333333;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
 .location {
   font-size: 14px;
   color: #555555;

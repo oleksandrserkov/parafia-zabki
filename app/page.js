@@ -11,6 +11,7 @@ const CONTENT = {
   pl: {
     eyebrow: 'Parafia Greckokatolicka',
     title: 'Narodzenie Najświętszej Maryi Panny',
+    roots: 'Nabożeństwa w języku ukraińskim dla wspólnoty ukraińskiej w Polsce',
     location: 'Ząbki koło Warszawy',
     about: {
       heading: 'O Parafii',
@@ -56,6 +57,7 @@ const CONTENT = {
   en: {
     eyebrow: 'Greek Catholic Parish',
     title: 'Nativity of the Most Holy Virgin Mary',
+    roots: 'Services in Ukrainian for the Ukrainian community in Poland',
     location: 'Ząbki, near Warsaw, Poland',
     about: {
       heading: 'About',
@@ -128,6 +130,7 @@ export default function Home() {
         <Image src="/favicon.webp" alt="Herb parafii" width={90} height={103} className={styles.crest} />
         <p className={styles.eyebrow}>{c.eyebrow}</p>
         <h1 className={styles.title}>{c.title}</h1>
+        <p className={styles.roots}>{c.roots}</p>
         <p className={styles.location}>{c.location}</p>
       </div>
 
