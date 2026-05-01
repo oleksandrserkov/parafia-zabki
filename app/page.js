@@ -47,7 +47,7 @@ const CONTENT = {
       heading: 'Kontakt',
       rows: [
         { label: 'Osoba:', value: 'Valeriia Brodzki', href: null },
-        { label: 'Tel:', value: '+48 570 443 757', href: 'tel:+48570443757' },
+        { label: 'Tel:', value: '+48 57 443 757', href: null },
         { label: 'E-mail:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Adres:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
       ],
@@ -93,7 +93,7 @@ const CONTENT = {
       heading: 'Contact',
       rows: [
         { label: 'Person:', value: 'Valeriia Brodzki', href: null },
-        { label: 'Phone:', value: '+48 570 443 757', href: 'tel:+48570443757' },
+        { label: 'Phone:', value: '+48 57 443 757', href: null },
         { label: 'Email:', value: 'parafia.zabki.nmp@gmail.com', href: 'mailto:parafia.zabki.nmp@gmail.com' },
         { label: 'Address:', value: 'ul. Powstańców 30, 05-091 Ząbki', href: MAPS_URL },
       ],
